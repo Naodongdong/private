@@ -142,6 +142,9 @@ proxy-groups:
   - {name: YouTube,  <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/YouTube.png}
   - {name: NetFlix,  <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Netflix.png}
   - {name: 国际媒体,  <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/DomesticMedia.png}
+  - {name: TelegramSG, <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Telegram_X.png}
+  - {name: TelegramUS, <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Telegram_X.png}
+  - {name: TelegramEU, <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Telegram_X.png}
   - {name: Telegram, <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Telegram_X.png}
   - {name: Twitter,  <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/X.png}
   - {name: 社交平台,  <<: *SelectProxy, icon: https://gh-proxy.com/https://github.com/Koolson/Qure/raw/master/IconSet/Color/PBS.png}
@@ -211,6 +214,9 @@ rule-providers:
   speedtest:                 {<<: *ClassicalYaml, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/speedtest.yaml}
   emby:                      {<<: *ClassicalText, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/emby.list}
   openai:                    {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/openai.mrs}
+  telegramSG:                      {<<: *ClassicalText, url: https://gh-proxy.com/https://raw.githubusercontent.com/Naodongdong/private/refs/heads/main/rule_script/TelegramSG.list}
+  telegramEU:                      {<<: *ClassicalText, url: https://gh-proxy.com/https://raw.githubusercontent.com/Naodongdong/private/refs/heads/main/rule_script/TelegramEU.list}
+  telegramUS:                      {<<: *ClassicalText, url: https://gh-proxy.com/https://raw.githubusercontent.com/Naodongdong/private/refs/heads/main/rule_script/TelegramUS.list}
   telegram:                  {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/telegram.mrs}
   twitter:                   {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/twitter.mrs}
   instagram:                 {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/instagram.mrs}
@@ -264,6 +270,9 @@ rules:
   - RULE-SET,speedtest,网速测试
   - RULE-SET,openai,AI平台
   - RULE-SET,category-ai-!cn,AI平台
+  - RULE-SET,telegramSG,TelegramSG
+  - RULE-SET,telegramUS,TelegramUS
+  - RULE-SET,telegramEU,TelegramEU
   - RULE-SET,telegram,Telegram
   - RULE-SET,twitter,Twitter
   - RULE-SET,emby,Emby
