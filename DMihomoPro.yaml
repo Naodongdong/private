@@ -220,7 +220,7 @@ rule-providers:
   telegram:                  {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/telegram.mrs}
   twitter:                   {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/twitter.mrs}
   instagram:                 {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/instagram.mrs}
-  youtube:                   {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/youtube.mrs}
+  youtube:                   {<<: *ClassicalText, url: https://gh-proxy.com/https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/YouTube/YouTube.list}
   spotify:                   {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/spotify.mrs}
   netflix:                   {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/netflix.mrs}
   disney:                    {<<: *DomainMrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/disney.mrs}
