@@ -108,7 +108,7 @@ dns:
 proxy-groups:
   - {name: 一键智能,   <<: *Select, include-all: true, icon: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/image/mihomo.png}
   - {name: AI平台,    <<: *Sel_US, include-all: true, filter: "🇺🇸|美|🇸🇬|新|🇯🇵|日|🇼🇸|🇹🇼|台",exclude-filter: "🇭🇰|港", icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/AI.png}
-  - {name: 电报消息,   <<: *Sel_SG, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Telegram_X.png}
+  - {name: 电报消息,   <<: *Select, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Telegram_X.png}
   - {name: 国际媒体,   <<: *Sel_Smart, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/DomesticMedia.png}
   - {name: 香港智能,   <<: *Smart, filter: *FilterHK, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png}
   - {name: 台湾智能,   <<: *Smart, filter: *FilterTW, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Taiwan.png}
