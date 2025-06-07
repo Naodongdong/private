@@ -142,6 +142,8 @@ rules:
   - DOMAIN-SUFFIX,imee.me,DIRECT
   - DOMAIN-SUFFIX,0057300.xyz,DIRECT
   
+  - RULE-SET,fix-direct,DIRECT
+  - RULE-SET,XPTV,DIRECT
   - RULE-SET,telegram,电报消息
   - RULE-SET,category-ai-!cn,AI平台
   - RULE-SET,youtube,国际媒体
