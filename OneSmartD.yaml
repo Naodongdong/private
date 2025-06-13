@@ -9,12 +9,12 @@
 # ||                                     ||
 # >>=====================================<<
 # 名称: OneSmart 一键智能 v0.2
-# 日期: 2025 年 6 月 12 日 D
+# 日期: 2025 年 6 月 13 日 D
 # 地址: https://github.com/666OS
 # 频道: https://t.me/Pinched666
 
 PProviders: &PProviders {type: http, interval: 86400, proxy: DIRECT, health-check: {enable: true, url: 'https://www.gstatic.com/generate_204', interval: 300}, filter: '^(?!.*(群|邀请|返利|循环|官网|客服|网站|网址|获取|订阅|流量|到期|机场|下次|版本|官址|备用|过期|已用|联系|邮箱|工单|贩卖|通知|倒卖|防止|国内|地址|频道|无法|说明|使用|提示|特别|访问|支持|教程|关注|更新|作者|加入|USE|USED|TOTAL|EXPIRE|EMAIL|Panel|Channel|Author))'}
-Smart: &Smart {type: smart, interval: 60, lazy: true, url: 'https://www.gstatic.com/generate_204', collectdata: true, uselightgbm: true, disable-udp: false, timeout: 5000, max-failed-times: 5, hidden: false, include-all: true}
+Smart: &Smart {type: smart, interval: 60, lazy: true, url: 'https://www.gstatic.com/generate_204', collectdata: true, uselightgbm: true, strategy: sticky-sessions, disable-udp: false, timeout: 5000, max-failed-times: 5, hidden: false, include-all: true}
 FilterHK: &FilterHK '^(?=.*(?i)(港|🇭🇰|HK|Hong|HKG))(?!.*(排除1|排除2|5x)).*$'
 FilterSG: &FilterSG '^(?=.*(?i)(坡|🇸🇬|SG|Sing|SIN|XSP))(?!.*(排除1|排除2|5x)).*$'
 FilterJP: &FilterJP '^(?=.*(?i)(日|🇯🇵|JP|Japan|NRT|HND|KIX|CTS|FUK))(?!.*(排除1|排除2|5x)).*$'
@@ -109,6 +109,8 @@ proxy-groups:
   - {name: 一键智能,   <<: *Select, include-all: true, icon: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/image/mihomo.png}
   - {name: AI平台,    <<: *Sel_US, include-all: true, filter: "🇺🇸|美|🇸🇬|新|🇯🇵|日|🇼🇸|🇹🇼|台",exclude-filter: "🇭🇰|港", icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/AI.png}
   - {name: 电报消息,   <<: *Sel_Smart, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Telegram_X.png}
+  - {name: YouTube,  <<: *Select, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/YouTube.png}
+  - {name: Twitter,  <<: *Select, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/X.png}
   - {name: 国际媒体,   <<: *Sel_Smart, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/DomesticMedia.png}
   - {name: 香港智能,   <<: *Smart, filter: *FilterHK, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Hong_Kong.png}
   - {name: 台湾智能,   <<: *Smart, filter: *FilterTW, icon: https://git.imee.me/https://github.com/Koolson/Qure/raw/master/IconSet/Color/Taiwan.png}
@@ -123,6 +125,7 @@ rule-providers:
   fix-direct:         {type: http, interval: 86400, behavior: classical, format: yaml, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/fix-direct.yaml}
   XPTV:               {type: http, interval: 86400, behavior: classical, format: yaml, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/XPTV.yaml}
   telegram:           {type: http, interval: 86400, behavior: domain, format: mrs, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/telegram.mrs}
+  twitter:            {type: http, interval: 86400, behavior: domain, format: mrs, url: https://gh-proxy.com/https://github.com/666OS/YYDS/raw/main/mihomo/rules/twitter.mrs}
   category-ai-!cn:    {type: http, interval: 86400, behavior: domain, format: mrs, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/category-ai-!cn.mrs}
   geolocation-!cn:    {type: http, interval: 86400, behavior: domain, format: mrs, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/geolocation-!cn.mrs}
   youtube:            {type: http, interval: 86400, behavior: domain, format: mrs, url: https://git.imee.me/https://github.com/666OS/YYDS/raw/main/mihomo/rules/youtube.mrs}
@@ -142,11 +145,10 @@ rules:
   - DOMAIN-SUFFIX,imee.me,DIRECT
   - DOMAIN-SUFFIX,0057300.xyz,DIRECT
   
-  - RULE-SET,fix-direct,DIRECT
-  - RULE-SET,XPTV,DIRECT
   - RULE-SET,telegram,电报消息
   - RULE-SET,category-ai-!cn,AI平台
-  - RULE-SET,youtube,国际媒体
+  - RULE-SET,twitter,Twitter
+  - RULE-SET,youtube,YouTube
   - RULE-SET,spotify,国际媒体
   - RULE-SET,netflix,国际媒体
   - RULE-SET,disney,国际媒体
